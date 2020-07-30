@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GraphSync","The GraphSync behaviour that gets consumed by the Swarm."],["GraphSyncCodec","Codec used for encoding and decoding protobuf messages"],["GraphSyncHandler","Handler implementation for GraphSync protocol."]]});

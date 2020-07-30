@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Codec",""],["Error","Cid Error"],["Version","Cid protocol version"]],"mod":[["json",""]],"struct":[["Cid","Representation of a IPLD CID."],["Prefix","Prefix represents all metadata of a CID, without the actual content."]]});

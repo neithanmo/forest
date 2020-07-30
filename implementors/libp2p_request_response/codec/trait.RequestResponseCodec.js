@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["forest_libp2p"] = [{"text":"impl RequestResponseCodec for <a class=\"struct\" href=\"forest_libp2p/blocksync/struct.BlockSyncCodec.html\" title=\"struct forest_libp2p::blocksync::BlockSyncCodec\">BlockSyncCodec</a>","synthetic":false,"types":["forest_libp2p::blocksync::BlockSyncCodec"]},{"text":"impl RequestResponseCodec for <a class=\"struct\" href=\"forest_libp2p/hello/struct.HelloCodec.html\" title=\"struct forest_libp2p::hello::HelloCodec\">HelloCodec</a>","synthetic":false,"types":["forest_libp2p::hello::HelloCodec"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

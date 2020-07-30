@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["MAX_INDEX",""]],"enum":[["Error","AMT Error"]],"struct":[["Amt","Array Mapped Trie allows for the insertion and persistence of data, serializable to a CID"],["BitMap","Map of bits to indicate which indexes contain values and which are empty"]]});

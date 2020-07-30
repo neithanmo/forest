@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["graphsync"] = [{"text":"impl ProtocolsHandler for <a class=\"struct\" href=\"graphsync/libp2p/struct.GraphSyncHandler.html\" title=\"struct graphsync::libp2p::GraphSyncHandler\">GraphSyncHandler</a>","synthetic":false,"types":["graphsync::libp2p::handler::GraphSyncHandler"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["EPOCHS_IN_DAY",""],["EPOCHS_IN_HOUR",""],["EPOCHS_IN_YEAR",""],["EPOCH_DURATION_SECONDS",""],["EXPECTED_LEADERS_PER_EPOCH","The expected number of block producers in each epoch."],["SECONDS_IN_DAY",""],["SECONDS_IN_HOUR",""],["SECONDS_IN_YEAR",""]]});

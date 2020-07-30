@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Method","Account actor methods available"]],"struct":[["Actor",""],["BytesParams",""],["MINIMUM_VERIFIED_SIZE",""],["State",""],["VerifierParams",""]],"type":[["AddVerifierClientParams",""],["AddVerifierParams",""],["Datacap",""],["RestoreBytesParams",""],["UseBytesParams",""]]});

@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["graphsync"] = [{"text":"impl Decoder for <a class=\"struct\" href=\"graphsync/libp2p/struct.GraphSyncCodec.html\" title=\"struct graphsync::libp2p::GraphSyncCodec\">GraphSyncCodec</a>","synthetic":false,"types":["graphsync::libp2p::codec::GraphSyncCodec"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,4 @@
+(function() {var implementors = {};
+implementors["db"] = [];
+implementors["ipld_blockstore"] = [{"text":"impl&lt;'_, BS&gt; <a class=\"trait\" href=\"db/trait.Store.html\" title=\"trait db::Store\">Store</a> for <a class=\"struct\" href=\"ipld_blockstore/struct.BufferedBlockStore.html\" title=\"struct ipld_blockstore::BufferedBlockStore\">BufferedBlockStore</a>&lt;'_, BS&gt; <span class=\"where fmt-newline\">where<br>&nbsp;&nbsp;&nbsp;&nbsp;BS: <a class=\"trait\" href=\"db/trait.Store.html\" title=\"trait db::Store\">Store</a>,&nbsp;</span>","synthetic":false,"types":["ipld_blockstore::buffered::BufferedBlockStore"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

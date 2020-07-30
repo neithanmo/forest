@@ -1,0 +1,1 @@
+initSidebarItems({"macro":[["bitfield","Constructs a `BitField` from a given list of 1s and 0s."]],"mod":[["iter",""]],"struct":[["BitField","An bit field with buffered insertion/removal that serializes to/from RLE+. Similar to `HashSet<usize>`, but more memory-efficient when long runs of 1s and 0s are present."]]});

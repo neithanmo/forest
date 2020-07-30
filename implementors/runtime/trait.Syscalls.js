@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["interpreter"] = [{"text":"impl&lt;'bs, BS&gt; <a class=\"trait\" href=\"runtime/trait.Syscalls.html\" title=\"trait runtime::Syscalls\">Syscalls</a> for <a class=\"struct\" href=\"interpreter/struct.DefaultSyscalls.html\" title=\"struct interpreter::DefaultSyscalls\">DefaultSyscalls</a>&lt;'bs, BS&gt; <span class=\"where fmt-newline\">where<br>&nbsp;&nbsp;&nbsp;&nbsp;BS: <a class=\"trait\" href=\"ipld_blockstore/trait.BlockStore.html\" title=\"trait ipld_blockstore::BlockStore\">BlockStore</a>,&nbsp;</span>","synthetic":false,"types":["interpreter::default_syscalls::DefaultSyscalls"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

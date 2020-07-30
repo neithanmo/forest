@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BufferedBlockStore","Wrapper around `BlockStore` to limit and have control over when values are written. This type is not threadsafe and can only be used in synchronous contexts."]],"trait":[["BlockStore","Wrapper for database to handle inserting and retrieving ipld data with Cids"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["chain_message",""],["json",""],["signed_message",""],["unsigned_message",""]],"struct":[["MessageReceipt","Result of a state transition from a message"]],"trait":[["Message",""]]});

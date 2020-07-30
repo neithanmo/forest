@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["EPOCH_UNDEFINED",""]],"struct":[["ChainEpochClock","ChainEpochClock is used by the system node to assume weak clock synchrony amongst the other systems."]],"type":[["ChainEpoch",""]]});
