@@ -7,7 +7,7 @@ mod payload;
 mod protocol;
 pub use self::errors::Error;
 pub use self::network::Network;
-pub use self::payload::{BLSPublicKey, Payload};
+pub use self::payload::Payload;
 pub use self::protocol::Protocol;
 
 use data_encoding::Encoding;
@@ -23,18 +23,9 @@ const ADDRESS_ENCODER: Encoding = new_encoding! {
     padding: None,
 };
 
-/// Hash length of payload for Secp and Actor addresses.
-pub const PAYLOAD_HASH_LEN: usize = 20;
-
-/// Uncompressed secp public key used for validation of Secp addresses.
-pub const SECP_PUB_LEN: usize = 65;
-
-/// BLS public key length used for validation of BLS addresses.
 pub const BLS_PUB_LEN: usize = 48;
-
-/// Length of the checksum hash for string encodings.
+pub const PAYLOAD_HASH_LEN: usize = 20;
 pub const CHECKSUM_HASH_LEN: usize = 4;
-
 const MAX_ADDRESS_LEN: usize = 84 + 2;
 const MAINNET_PREFIX: &str = "f";
 const TESTNET_PREFIX: &str = "t";
@@ -44,7 +35,6 @@ const NETWORK_DEFAULT: Network = Network::Testnet;
 
 /// Address is the struct that defines the protocol and data payload conversion from either
 /// a public key or value
-/// TODO add Address JSON implementation
 #[derive(PartialEq, Eq, Clone, Debug, Hash, Copy)]
 pub struct Address {
     network: Network,
@@ -79,14 +69,11 @@ impl Address {
     }
 
     /// Generates new address using Secp256k1 pubkey
-    pub fn new_secp256k1(pubkey: &[u8]) -> Result<Self, Error> {
-        if pubkey.len() != 65 {
-            return Err(Error::InvalidSECPLength(pubkey.len()));
-        }
-        Ok(Self {
+    pub fn new_secp256k1(pubkey: &[u8]) -> Self {
+        Self {
             network: NETWORK_DEFAULT,
             payload: Payload::Secp256k1(address_hash(pubkey)),
-        })
+        }
     }
 
     /// Generates new address using the Actor protocol
@@ -119,12 +106,6 @@ impl Address {
     /// in an enum separated by protocol
     pub fn payload(&self) -> &Payload {
         &self.payload
-    }
-
-    /// Converts Address into `Payload` object, where the respective protocol data is kept
-    /// in an enum separated by protocol
-    pub fn into_payload(self) -> Payload {
-        self.payload
     }
 
     /// Returns the raw bytes data payload of the Address
@@ -162,7 +143,7 @@ impl FromStr for Address {
             return Err(Error::InvalidLength);
         }
         // ensure the network character is valid before converting
-        let network: Network = match &addr[0..1] {
+        let network: Network = match addr.get(0..1).ok_or(Error::UnknownNetwork)? {
             TESTNET_PREFIX => Network::Testnet,
             MAINNET_PREFIX => Network::Mainnet,
             _ => {
@@ -171,7 +152,7 @@ impl FromStr for Address {
         };
 
         // get protocol from second character
-        let protocol: Protocol = match &addr[1..2] {
+        let protocol: Protocol = match addr.get(1..2).ok_or(Error::UnknownProtocol)? {
             "0" => Protocol::ID,
             "1" => Protocol::Secp256k1,
             "2" => Protocol::Actor,
@@ -182,7 +163,7 @@ impl FromStr for Address {
         };
 
         // bytes after the protocol character is the data payload of the address
-        let raw = &addr[2..];
+        let raw = addr.get(2..).ok_or(Error::InvalidPayload)?;
         if protocol == Protocol::ID {
             if raw.len() > 20 {
                 // 20 is max u64 as string
